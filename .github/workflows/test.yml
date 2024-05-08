@@ -1,14 +1,16 @@
-name: “My CI Workflow"
+name: Hello World Workflow
+
 on:
   push:
+    branches:
+      - main
   pull_request:
+    branches:
+      - main
+
 jobs:
-  hello:
+  greet:
+    runs-on: ubuntu-latest
     steps:
-    - name: Print Hello
-      run: echo Hello
-  world:
-    needs: hello
-    steps:
-      - name: Print World
-      run: echo World!
+      - name: Print Hello World
+        run: echo "Hello World"
