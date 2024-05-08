@@ -19,11 +19,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: 
+      - name: Init Submodules
         run: git submodule update --init
-      - name: 
+      - name: Create folder build
         run: cmake -S . -B build
-      - name:
+      - name: Make
         run: cmake --build build -j
       - name: Run
-        run: ./build/address_book
+        run: ./build/address_book_tests
