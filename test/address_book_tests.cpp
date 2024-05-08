@@ -12,8 +12,14 @@ TEST_CASE("entries can be added and removed") {
 	CHECK_FALSE(ab.has_entry("Jane Doe"));
 }
 
-TEST_CASE("customers can be deleted") {
+TEST_CASE("Add entry with valid inputs"){
 	address_book ab;
-	ab.delete_all();
-	CHECK(ab.count() == 0);
+	std::string name = "Test Name";
+	uint64_t number = 1234567890;
+	unsigned int month = 12;
+    unsigned int day = 25;
+	ab.add_entry(name);
+	ab.set_birthday(name, std::chrono::month_day{std::chrono::month{month}, std::chrono::day{day}});
+	ab.set_phone_number(name, number);
+	CHECK(ab.has_entry(name));
 }
