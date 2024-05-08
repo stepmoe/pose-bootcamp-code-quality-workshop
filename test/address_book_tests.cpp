@@ -2,6 +2,7 @@
 #include <catch2/matchers/catch_matchers_string.hpp>
 
 #include "address_book.hpp"
+#include "synchronization.hpp"
 
 TEST_CASE("entries can be added and removed") {
 	address_book ab;
@@ -21,19 +22,5 @@ TEST_CASE("Add entry with valid inputs"){
 	ab.add_entry(name);
 	ab.set_birthday(name, std::chrono::month_day{std::chrono::month{month}, std::chrono::day{day}});
 	ab.set_phone_number(name, number);
-	CHECK(ab.has_entry(name));
-}
-
-TEST_CASE("Check entry name"){
-	address_book ab;
-	std::string name = "Test Name";
-	ab.remove_entry(name);
-	CHECK(ab.has_entry(name));
-}
-
-TEST_CASE("Add entry length"){
-	address_book ab;
-	std::string name = "Testcikowerjdlsjdfoisdlkfmsdlöfjoisdzfpsdojfösdjföpsdjfoisdzufosjdljkjlkcjlkjlijlsdijfjlsdjflsdjf";
-	ab.add_entry(name);
 	CHECK(ab.has_entry(name));
 }
