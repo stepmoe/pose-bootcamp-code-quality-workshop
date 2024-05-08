@@ -1,0 +1,14 @@
+name: “My CI Workflow"
+on:
+  push:
+  pull_request:
+jobs:
+  hello:
+    steps:
+    - name: Print Hello
+      run: echo Hello
+  world:
+    needs: hello
+    steps:
+      - name: Print World
+      run: echo World!
