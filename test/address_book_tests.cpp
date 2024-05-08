@@ -23,3 +23,17 @@ TEST_CASE("Add entry with valid inputs"){
 	ab.set_phone_number(name, number);
 	CHECK(ab.has_entry(name));
 }
+
+TEST_CASE("Check entry name"){
+	address_book ab;
+	std::string name = "Test Name";
+	ab.remove_entry(name);
+	CHECK(ab.list_entries(name));
+}
+
+TEST_CASE("Add entry length"){
+	address_book ab;
+	std::string name = "Testcikowerjdlsjdfoisdlkfmsdlöfjoisdzfpsdojfösdjföpsdjfoisdzufosjdljkjlkcjlkjlijlsdijfjlsdjflsdjf";
+	ab.add_entry(name);
+	CHECK(ab.has_entry(name));
+}
