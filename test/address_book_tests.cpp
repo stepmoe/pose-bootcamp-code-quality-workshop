@@ -28,7 +28,7 @@ TEST_CASE("Check entry name"){
 	address_book ab;
 	std::string name = "Test Name";
 	ab.remove_entry(name);
-	CHECK(ab.list_entries(name));
+	CHECK(ab.has_entry(name));
 }
 
 TEST_CASE("Add entry length"){
