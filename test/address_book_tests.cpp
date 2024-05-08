@@ -11,3 +11,9 @@ TEST_CASE("entries can be added and removed") {
 	ab.remove_entry("Jane Doe");
 	CHECK_FALSE(ab.has_entry("Jane Doe"));
 }
+
+TEST_CASE("customers can be deleted") {
+	address_book ab;
+	ab.delete_all();
+	CHECK(ab.count() == 0);
+}

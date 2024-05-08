@@ -26,4 +26,4 @@ jobs:
       - name:
         run: cmake --build build -j
       - name: Run
-        run: ./build/address_book
+        run: ./build/address_book_tests
