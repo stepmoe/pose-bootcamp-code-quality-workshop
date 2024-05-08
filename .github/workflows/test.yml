@@ -27,22 +27,3 @@ jobs:
         run: cmake --build build -j
       - name: Run
         run: ./build/address_book
-
-
-
-
-jobs:
-  compile_and_run:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Install GCC
-        run: sudo apt-get update && sudo apt-get install -y gcc
-
-      - name: Compile C program
-        run: gcc test.c -o test
-
-      - name: Run compiled program
-        run: ./test
